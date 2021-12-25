@@ -40,10 +40,10 @@ function(add_ocaml_library name)
   set(ocaml_outputs "${bin}/${name}.cma")
   if( ARG_C )
     list(APPEND ocaml_outputs
-         "${bin}/lib${name}${CMAKE_STATIC_LIBRARY_SUFFIX}")
+         "${bin}/lib${name}.a")
     if ( BUILD_SHARED_LIBS )
       list(APPEND ocaml_outputs
-           "${bin}/dll${name}${CMAKE_SHARED_LIBRARY_SUFFIX}")
+           "${bin}/dll${name}.so")
     endif()
   endif()
   if( HAVE_OCAMLOPT )
